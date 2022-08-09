@@ -2370,7 +2370,7 @@ input, select, textarea {
 
 	#footer {
 		position: relative;
-		color: #858484;
+		color: #ffffff;
 		padding: 4em 0;
 	}
 
@@ -2387,7 +2387,7 @@ input, select, textarea {
 		}
 
 		#footer a {
-			color: #c5c4c4;
+			color: #fefcfc;
 		}
 
 		#footer h2, #footer h3, #footer h4, #footer h5, #footer h6, #footer strong, #footer b {
@@ -2401,7 +2401,7 @@ input, select, textarea {
 		#footer ul.contact li,
 		#footer ul.dates li,
 		#footer ul.divided li {
-			border-top-color: #353434;
+			border-top-color: #f6f1f1;
 			border-top-color: rgba(255, 255, 255, 0.05);
 		}
 
