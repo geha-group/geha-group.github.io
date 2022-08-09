@@ -19,9 +19,9 @@
 	font-family: "Raleway";
 }
 /*JG: Change link colors */
-p a:link {
+/* p a:link {
 	color: rgb(127, 138, 169);
-}  
+}   */
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -176,7 +176,8 @@ input, select, textarea {
 	}
 
 	a {
-		color: #d52349;
+		/* color: #d52349; */
+		color: rgb(127, 138, 169);
 		text-decoration: underline;
 	}
 
