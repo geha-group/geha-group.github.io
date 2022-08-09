@@ -1579,15 +1579,29 @@ input, select, textarea {
 	.box {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
-		padding: 2.75em 1.75em 2.75em 1.75em;
+		padding: 2.75em 1.75em 15.75em 1.75em;
 	}
-
 		.box .image.featured {
 			position: relative;
 			width: auto;
 			left: 1.75em;
 			top: 1.75em;
 			margin: -4.5em 0 4.25em -3.5em;
+		}
+
+		.box .image.left {
+			position: relative;
+			float: left;
+			margin: 0 2em 2em 0;
+			width: 50%;
+			max-width: 30%;
+		}
+
+		.box .image.left img{
+			width: 100%;
+			position: static;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		.box.post header {
@@ -1608,6 +1622,12 @@ input, select, textarea {
 		.box footer ul.actions {
 			margin-bottom: 0;
 		}
+		.box.post p2 {
+			position: relative;
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
+	
 
 /* Button */
 
@@ -1726,6 +1746,7 @@ input, select, textarea {
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
+			width: 50%;
 		}
 
 /* List */
