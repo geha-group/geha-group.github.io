@@ -360,6 +360,9 @@ input, select, textarea {
 		.row > .col-10 {
 			width: 83.33333%;
 		}
+		.row > .col-full {
+			width: 100%;
+		}
 
 		.row > .off-10 {
 			margin-left: 83.33333%;
@@ -1597,6 +1600,7 @@ input, select, textarea {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
 		padding: 2.75em 1.75em 15.75em 1.75em;
+		width: 100%;
 	}
 		.box .image.featured {
 			position: relative;
@@ -1609,6 +1613,13 @@ input, select, textarea {
 		.box .image.left {
 			position: relative;
 			float: left;
+			margin: 0 2em 2em 0;
+			width: 50%;
+			max-width: 30%;
+		}
+		.box .image.right {
+			position: relative;
+			float: right;
 			margin: 0 2em 2em 0;
 			width: 50%;
 			max-width: 30%;
