@@ -1599,15 +1599,22 @@ input, select, textarea {
 	.box {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
-		padding: 2.75em 1.75em 15.75em 1.75em;
+		padding: 2.75em 1.75em 2.75em 1.75em;
 		width: 100%;
+		/* border-color:rgb(1, 1, 1); */
+		overflow: auto;
+		height: auto;
+		max-height: 100%;
 	}
 		.box .image.featured {
 			position: relative;
 			width: auto;
-			left: 1.75em;
-			top: 1.75em;
-			margin: -4.5em 0 4.25em -3.5em;
+			/* left: 1.75em; */
+			margin: auto;
+			bottom:1.25em;
+			/* top: 1.75em; */
+			/* margin: 1.25em 1.25em 1.25em 1.25em; */
+			max-width: 75%;
 		}
 
 		.box .image.left {
@@ -1621,8 +1628,10 @@ input, select, textarea {
 			position: relative;
 			float: right;
 			margin: 0 2em 2em 0;
-			width: 50%;
+			width: 30%;
 			max-width: 30%;
+			height:auto;
+			/* overflow: auto; */
 		}
 
 		.box .image.left img{
@@ -1630,6 +1639,7 @@ input, select, textarea {
 			position: static;
 			height: 100%;
 			object-fit: cover;
+			height:auto;
 		}
 
 		.box.post header {
@@ -1767,8 +1777,8 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
+			max-width:75%;
+			margin: auto;
 		}
 
 		.image.left {
@@ -2844,9 +2854,11 @@ input, select, textarea {
 			}
 
 				.box .image.featured {
-					left: 15px;
-					top: 15px;
-					margin: -40px 0 40px -30px;
+					position: relative;
+					width: auto;
+					margin: auto;
+					padding-top: .5em;
+					max-width: 75%;
 				}
 
 				.box.post header {
