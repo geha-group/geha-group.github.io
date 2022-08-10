@@ -2370,7 +2370,7 @@ input, select, textarea {
 
 	#footer {
 		position: relative;
-		color: #ffffff;
+		color: #191717;
 		padding: 4em 0;
 	}
 
@@ -2387,11 +2387,11 @@ input, select, textarea {
 		}
 
 		#footer a {
-			color: #fefcfc;
+			color: #1d1a1a;
 		}
 
 		#footer h2, #footer h3, #footer h4, #footer h5, #footer h6, #footer strong, #footer b {
-			color: #fff;
+			color: rgb(1, 1, 1);
 		}
 
 			#footer h2 a, #footer h3 a, #footer h4 a, #footer h5 a, #footer h6 a, #footer strong a, #footer b a {
@@ -2401,8 +2401,8 @@ input, select, textarea {
 		#footer ul.contact li,
 		#footer ul.dates li,
 		#footer ul.divided li {
-			border-top-color: #f6f1f1;
-			border-top-color: rgba(255, 255, 255, 0.05);
+			border-top-color: #0c0c0c;
+			border-top-color: rgba(0, 0, 0, 0.351);
 		}
 
 		#footer header {
@@ -2423,7 +2423,7 @@ input, select, textarea {
 		#copyright ul.links {
 			display: inline-block;
 			background: #2C2929;
-			background: rgba(255, 255, 255, 0.05);
+			background: rgba(1, 1, 1, 0.05);
 			border-radius: 5px;
 			margin: 0;
 			padding: 0.85em 2.25em 0.85em 2.25em;
@@ -2508,6 +2508,7 @@ input, select, textarea {
 
 			#footer {
 				padding: 3em 0;
+				background-color: white;
 			}
 
 				#footer:before {
@@ -2679,7 +2680,7 @@ input, select, textarea {
 						height: 40px;
 						line-height: 40px;
 						font-size: 18px;
-						color: #fff;
+						color: rgb(24, 24, 24);
 						text-align: center;
 						background: rgba(150, 150, 150, 0.75);
 						border-radius: 5px;
