@@ -11,12 +11,22 @@
 	font-weight: bold;
 	font-style: normal;
 	font-family: "Raleway";
+	font-size: 1.5em;
 }
 .test_notbold{
 	font-weight: normal;
 	font-style: normal;
 	font-family: "Raleway";
 }
+
+.test_center {
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Raleway";
+	font-size: 1.25em;
+	text-align: center;
+}
+
 /*JG: Change link colors */
 /* p a:link {
 	color: rgb(127, 138, 169);
@@ -1629,6 +1639,7 @@ input, select, textarea {
 			/* top: 1.75em; */
 			/* margin: 1.25em 1.25em 1.25em 1.25em; */
 			max-width: 75%;
+			object-fit: cover;
 		}
 
 		.box .image.left {
