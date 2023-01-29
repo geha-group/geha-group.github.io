@@ -17,6 +17,7 @@
 	font-weight: normal;
 	font-style: normal;
 	font-family: "Raleway";
+	font-size: 1.5em;
 }
 
 .test_center {
@@ -1815,8 +1816,8 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			max-width:75%;
-			/* max-height: 20; */
+			max-width: 75%;
+			max-height: 20;
 			margin: auto;
 		}
 
