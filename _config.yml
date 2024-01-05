@@ -1,0 +1,11 @@
+title: Geha Group
+
+collections:
+  cards:
+    output: true
+  members:
+    output: true
+
+sass:
+  sass_dir: _sass
+  style: compressed # or 'expanded' for development

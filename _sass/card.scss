@@ -1,0 +1,35 @@
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    flex-grow: 1; /* Ensures that this part of the card expands to fill the space */
+}
+
+.my-container {
+    padding-top: 20px; /* Space at the top inside the container */
+    padding-bottom: 20px; /* Space at the bottom inside the container */
+}
+
+@media (max-width: 768px) {
+    .my-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.card-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps the text color consistent */
+}
+
+.card-link:hover {
+    cursor: pointer; /* Changes cursor style to indicate clickability */
+}
