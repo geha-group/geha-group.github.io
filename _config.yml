@@ -5,6 +5,10 @@ collections:
     output: true
   members:
     output: true
+  research:
+    output: true
+  outreach:
+    output: true
 
 sass:
   sass_dir: _sass
