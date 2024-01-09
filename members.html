@@ -43,7 +43,33 @@ layout: page
 
 <div class="container my-container">
     <div class="row">
-        {% for member in site.members %}
+        {% for member in site.postdocs %}
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                {% if member.external_url %}
+                    <a href="{{ member.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                {% else %}
+                    <a href="{{ site.baseurl }}{{ member.url }}" class="card-link">
+                {% endif %}
+                <div class="card flex-fill">
+                    {% if member.image %}
+                        <img class="card-img-top" src="{{ member.image }}" alt="{{ member.title }}">
+                    {% endif %}
+                    <div class="card-body flex-grow-1">
+                        <h5 class="card-title">{{ member.title }}</h5>
+                        <div class="card-text">
+                            {{ member.text | markdownify }}
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container my-container">
+    <div class="row">
+        {% for member in site.grads %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
                 {% if member.external_url %}
                     <a href="{{ member.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
