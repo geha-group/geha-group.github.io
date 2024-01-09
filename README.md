@@ -1,3 +1,21 @@
+# Under Construction
+
+Unfinished Pages:
+- Home Page
+- Members
+- Outreach 
+- Research 
+
+Finished Pages:
+- Opportunities 
+
+Website to do items: 
+- adding text for the home page cards for research + outreach 
+- adding text for the content on research + outreach pages respectively 
+- cards for each member with short bio
+- links to different project webpages on cards 
+
+
 # group-site
 
 Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.

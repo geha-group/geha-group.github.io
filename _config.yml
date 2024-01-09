@@ -3,7 +3,9 @@ title: Geha Group
 collections:
   cards:
     output: true
-  members:
+  postdocs:
+    output: true
+  grads:
     output: true
   research:
     output: true
