@@ -4,19 +4,17 @@ title: Outreach
 permalink: /outreach/
 ---
 
-<div class="container ">
-    {% for card in site.outreach %}
-        <div class="row mb-4"> <!-- mb-4 adds some space between the rows -->
-            <div class="col-12">
-                <div class="card single-row-card">
-                    {% if card.image %}
-                        <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ card.title }}</h5>
-                        <p class="card-text">{{ card.content }}</p>
-                    </div>
+<div class="container my-container">
+    {% for outreach in site.outreach %}
+        <div class="row mb-4 card-border"> <!-- mb-4 for spacing between rows -->
+            <div class="col-md-6">
+                <div class="text-div ">
+                    <h3>{{ outreach.title }}</h3>
+                    <p>{{ outreach.content }}</p>
                 </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ outreach.image | relative_url }}" alt="{{ outreach.title }}" class="img-fluid">
             </div>
         </div>
     {% endfor %}

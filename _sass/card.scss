@@ -34,26 +34,10 @@
     cursor: pointer; 
 }
 
-.single-row-card {
-    /* Custom styles for larger single-row cards */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: none; /* Example to remove border */
-    margin: auto; /* Center the card if needed */
-    min-width: 50%;
-    max-width: 95%;
-}
 
-.single-row-card .card-img-top {
-    max-height: 300px; /* Adjust maximum height as needed */
-    width: 50%; /* Image will scale to maintain its aspect ratio */
-    object-fit: contain; /* Ensures the entire image is shown, may add letterboxing */
-    // center image
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.single-row-card .card-body {
-    /* Style the card body */
+.card-border {
+    border: 1px solid #d0d0d0; /* Adjust color, width, and style as needed */
+    padding: 15px; /* Optional: for spacing inside the card */
+    margin-bottom: 20px; /* Optional: for spacing between cards */
+    border-radius: 5px; /* Optional: for rounded corners */
 }
