@@ -12,12 +12,11 @@ h1 {
     /* You can adjust the 20px to increase or decrease the padding */
 }
 
-h2 {
+h3 {
     text-align: center; /* Centers the text */
     padding-top: 20px; /* Adds padding to the top */
     padding-bottom: 20px; /* Adds padding to the bottom */
     /* You can adjust the 20px to increase or decrease the padding */
-
 }
 
 h2 {
@@ -26,7 +25,11 @@ h2 {
     z-index: 1;
     overflow: hidden;
     text-align: center;
+    padding-top: 20px; /* Adds padding to the top */
+    padding-bottom: 20px; /* Adds padding to the bottom */
+    /* You can adjust the 20px to increase or decrease the padding */
 }
+
 h2:before, h2:after {
     position: absolute;
     top: 51%;
@@ -35,11 +38,17 @@ h2:before, h2:after {
     height: 1px;
     content: '\a0';
     background-color: #d0d0d0;
+    
 }
+
 h2:before {
-    margin-left: -50%;
-    text-align: right;
+    margin-left: -53%;
 }
+
+h2:after {
+    margin-left: 3%;
+}
+
 .color {
     background-color: #d0d0d0;
 }
