@@ -31,6 +31,11 @@ layout: default
         {% for card in site.research %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
                 <div class="card flex-fill">
+                    {% if card.external_url %}
+                        <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                    {% else %}
+                        <a href="{{ site.baseurl }}{{ card.url }}" class="card-link">
+                    {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
                     {% endif %}
@@ -38,8 +43,9 @@ layout: default
                         <h5 class="card-title">{{ card.title }}</h5>
                         <div class="card-text">
                             {{ card.text | markdownify }}
-                        </div>
                     </div>
+                </div>
+                    </a>
                 </div>
             </div>
         {% endfor %}
@@ -53,6 +59,11 @@ layout: default
         {% for card in site.outreach %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
                 <div class="card flex-fill">
+                    {% if card.external_url %}
+                    <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                    {% else %}
+                        <a href="{{ site.baseurl }}{{ card.url }}" class="card-link">
+                    {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
                     {% endif %}
@@ -62,6 +73,7 @@ layout: default
                             {{ card.text | markdownify }}
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         {% endfor %}

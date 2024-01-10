@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "The SAGA Survey"
 image: "/assets/images/saga_transparent.png"
 text: |

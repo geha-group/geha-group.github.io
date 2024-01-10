@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+// add padding to card image
+.card-img-top {
+    padding: 15px;
+}
+
 .card-body {
     flex-grow: 1;
     display: flex;

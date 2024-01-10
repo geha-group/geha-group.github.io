@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Milky Way Dwarf Galaxies"
 image: "/assets/images/mw_transparent.png"
 text: |

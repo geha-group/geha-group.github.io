@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Warrior-Scholar Project"
 image: "/assets/images/wsp_transparent.png"
 text: |

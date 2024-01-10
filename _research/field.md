@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Isolated and Field Low Mass Galaxies"
 image: "/assets/images/isolated_transparent.png"
 text: |
