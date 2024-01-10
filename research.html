@@ -4,4 +4,18 @@ title: Research
 permalink: /research/
 ---
 
-hello
+<div class="container">
+    {% for research in site.research %}
+        <div class="row mb-4 card-border" id="{{research.title}}"> <!-- mb-4 for spacing between rows -->
+            <div class="col-md-8">
+                <div class="text-div ">
+                    <h3>{{ research.title }}</h3>
+                    <p>{{ research.content }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ research.image | relative_url }}" alt="{{ research.title }}" class="img-fluid">
+            </div>
+        </div>
+    {% endfor %}
+</div>

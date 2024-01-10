@@ -34,7 +34,7 @@ layout: default
                     {% if card.external_url %}
                         <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
                     {% else %}
-                        <a href="{{ site.baseurl }}{{ card.url }}" class="card-link">
+                        <a href="{{ 'research' | relative_url}}" class="card-link">
                     {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
@@ -62,7 +62,8 @@ layout: default
                     {% if card.external_url %}
                     <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
                     {% else %}
-                        <a href="{{ site.baseurl }}{{ card.url }}" class="card-link">
+                        <!-- <a href="{{ site.baseurl }}{{ card.url }}" class="card-link"> -->
+                        <a href="{{ 'outreach' | relative_url}}#{{card.title}}"" class="card-link">
                     {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">

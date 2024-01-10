@@ -6,7 +6,7 @@ permalink: /outreach/
 
 <div class="container">
     {% for outreach in site.outreach %}
-        <div class="row mb-4 card-border"> <!-- mb-4 for spacing between rows -->
+        <div class="row mb-4 card-border" id="{{outreach.title}}"> <!-- mb-4 for spacing between rows -->
             <div class="col-md-8">
                 <div class="text-div ">
                     <h3>{{ outreach.title }}</h3>
