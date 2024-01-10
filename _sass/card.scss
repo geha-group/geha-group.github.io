@@ -13,17 +13,6 @@
     flex-grow: 1; 
 }
 
-.my-container {
-    padding-top: 20px;    /* Space at the top inside the container */
-    padding-bottom: 20px; /* Space at the bottom inside the container */
-}
-
-@media (max-width: 768px) {
-    .my-container {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
 
 .card-link {
     text-decoration: none; 
@@ -42,6 +31,8 @@
     border-radius: 5px; /* Optional: for rounded corners */
 }
 
-.slightly-smaller img{
-    width: 50%;
+.custom-card-img {
+    width: 100%; /* or any specific value */
+    height: auto; /* maintain aspect ratio */
+    object-fit: cover; /* this ensures the image covers the area nicely */
 }

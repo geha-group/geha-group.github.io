@@ -1,8 +1,6 @@
 title: Geha Group
 
 collections:
-  cards:
-    output: true
   postdocs:
     output: true
   grads:
