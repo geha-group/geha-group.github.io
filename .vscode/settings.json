@@ -1,4 +1,9 @@
 {
-    "scss.validate": false
-
+    "scss.validate": false,
+    "files.exclude": {
+        "_site/**": true,
+        ".jekyll-cache/**": true,
+        "Gemfile.lock": true,
+        "group-site.gemspec": true,
+      }
 }
