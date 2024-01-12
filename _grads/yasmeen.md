@@ -1,10 +1,10 @@
 ---
 layout: page
 title: "Yasmeen Asali"
-image: "/assets/images/MW.jpeg"
+image: "/assets/images/yasmeen.jpeg"
 external_url: https://www.yasmeenasali.com
 text: |
-    Lorem ipsum sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.
+    Yasmeen works on characterizing satellite galaxies with the SAGA survey. 
 ---
 
 
