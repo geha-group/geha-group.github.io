@@ -13,6 +13,7 @@
         "_undergrads": "Content",
         "_research": "Content",
         "_outreach": "Content",
+        "_pi": "Content",
         "_layouts": "Constant",
         "_includes": "Helper",
       },

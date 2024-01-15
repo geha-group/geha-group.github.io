@@ -1,9 +1,13 @@
 title: Geha Group
 
 collections:
+  pi:
+    output: true
   postdocs:
     output: true
   grads:
+    output: true
+  undergrads:
     output: true
   research:
     output: true
