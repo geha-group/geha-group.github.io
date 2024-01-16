@@ -1,0 +1,19 @@
+title: Geha Group
+
+collections:
+  pi:
+    output: true
+  postdocs:
+    output: true
+  grads:
+    output: true
+  undergrads:
+    output: true
+  research:
+    output: true
+  outreach:
+    output: true
+
+sass:
+  sass_dir: _sass
+  style: compressed # or 'expanded' for development
