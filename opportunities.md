@@ -1,5 +1,8 @@
 ---
+title: Opportunities
+permalink: /opportunities/
 layout: default
+
 ---
 
 # Opportunities in the Geha Group
