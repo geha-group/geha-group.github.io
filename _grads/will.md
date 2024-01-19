@@ -4,7 +4,7 @@ title: "Will Cerny"
 image: "/assets/images/MW.jpeg"
 external_url: https://astronomy.yale.edu/people/william-cerny
 text: |
-    Lorem ipsum sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.
+   Will works on the discovery and characterization of ultra-faint Milky Way satellites, with a major focus on characterizing the kinematics, chemistries, and orbital histories of these systems through spectroscopy. He is also broadly interested in understanding the formation history of the Milky Way stellar halo as a member of the SDSS-V Milky Way Mapper.
 ---
 
 
