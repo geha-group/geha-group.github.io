@@ -41,3 +41,8 @@
     height: auto; /* maintain aspect ratio */
     object-fit: cover; /* this ensures the image covers the area nicely */
 }
+
+.max_card{
+    max-width: 400px; /* Adjust the max width as needed */
+    margin: auto; /* Centers the card in the column */
+}

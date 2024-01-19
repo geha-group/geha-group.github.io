@@ -55,10 +55,10 @@ layout: default
 <h2 >Outreach</h2>
 
 <div class="container my-container">
-    <div class="row">
+    <div class="row justify-content-center">
         {% for card in site.outreach %}
-            <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
-                <div class="card flex-fill">
+            <div class="col-sm-12 col-md-6 col-lg-6 d-flex mb-3">
+                <div class="card flex-fill max_card">
                     {% if card.external_url %}
                     <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
                     {% else %}
