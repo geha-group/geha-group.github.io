@@ -8,4 +8,4 @@ text: |
 ---
 
 
-<h1> {{ page.title}} </h1>asad;lkgjfasdf
+<h1> {{ page.title}} </h1>
