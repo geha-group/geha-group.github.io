@@ -24,7 +24,7 @@ layout: page
 
 <h2> Postdocs</h2>
 
-<div class="container my-container">
+<div class="container">
     <div class="row">
         {% for member in site.postdocs %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex mx-auto">
@@ -52,10 +52,10 @@ layout: page
 
 <h2>Graduate Students</h2>
 
-<div class="container my-container">
+<div class="container">
     <div class="row">
         {% for member in site.grads %}
-            <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mx-auto">
                 <div class="card flex-fill card-border">
                     {% if member.external_url %}
                         <a href="{{ member.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
