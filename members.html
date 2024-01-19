@@ -80,6 +80,32 @@ layout: page
 
 <h2>Undergrads</h2>
 
+<div class="container">
+    <div class="row">
+        {% for member in site.undergrads %}
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mx-auto">
+                <div class="card flex-fill card-border">
+                    {% if member.external_url %}
+                        <a href="{{ member.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                    {% else %}
+                        <a href="{{ site.baseurl }}{{ member.url }}" class="card-link">
+                    {% endif %}
+                        {% if member.image %}
+                            <img class="card-img-top custom-card-img" src="{{ member.image }}" alt="{{ member.title }}">
+                        {% endif %}
+                        <div class="card-body flex-grow-1">
+                            <h5 class="card-title">{{ member.title }}</h5>
+                            <div class="card-text">
+                                {{ member.text | markdownify }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
 <h2>Past Members</h2>
 
 <div class="container">
