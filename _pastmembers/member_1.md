@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Yasmeen Asali"
+title: "Example"
 image: "/assets/images/MW.jpeg"
 external_url: https://www.yasmeenasali.com
 text: |

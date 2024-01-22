@@ -1,7 +1,7 @@
 ---
-title: "Python Seminar"
+title: "Astro Research Preparation Series"
 layout: default
-image: "http://placehold.it/360x150"
+image: "/assets/images/astro-rps-logo-border-background.png"
 text: |
     This is text to go on the card on the home page. Lorem ipsum sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.
 ---

@@ -9,6 +9,8 @@ collections:
     output: true
   undergrads:
     output: true
+  pastmembers:
+    output: true
   research:
     output: true
   outreach:
