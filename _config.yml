@@ -17,3 +17,13 @@ collections:
 sass:
   sass_dir: _sass
   style: compressed # or 'expanded' for development
+
+
+plugins:
+  - jekyll-scholar
+scholar:
+  sort_by: year, month
+  order: descending
+  bibliography_template: bib
+  source: scripts
+  bibliography: most_recent_all.bib
