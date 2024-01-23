@@ -24,7 +24,7 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
             # Check if there are any papers for the author
             if papers:
                 # Get the most recent paper (first paper in the list)
-                most_recent_paper = papers[0:np.min(3,len(papers))]
+                most_recent_paper = papers[0]
                 
                 # Export the BibTeX entry for the most recent paper
                 bibquery = ads.ExportQuery(most_recent_paper.bibcode)
