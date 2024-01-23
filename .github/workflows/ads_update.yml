@@ -42,7 +42,7 @@ jobs:
       if: steps.git-check.outputs.changes == 'true'
       run: |
         git pull origin master
-        git add *.bib
+        git add scripts/most_recent_all.bib
         git commit -m "updating bib file"
         
         git push origin master
