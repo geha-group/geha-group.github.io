@@ -1,9 +1,9 @@
-# frozen_string_literal: true
+# Gemfile
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
+
+gem "jekyll", "~> 4.2"
 gem 'jekyll-scholar'
-gemspec
-
-
-# gem "group-site"
-
+group :jekyll_plugins do
+  gem "jekyll-timeago", "~> 0.13.1"
+end
