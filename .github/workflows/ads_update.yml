@@ -17,19 +17,32 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.9'  
 
     - name: Install the 'ads' library
-      run: pip install ads os yaml glob numpy
+      run: |
+        pip install --upgrade pip
+        pip install ads PyYAML numpy
 
     - name: Run the script
       run: |
-        python scripts/ads_update.py  # Replace with the path to your script file
+        python scripts/get_ads.py  # Replace with the path to your script file
+
+    - name: Check for changes
+      id: git-check
+      run: |
+        git config --global user.email 'juan.guerra@yale.edu'
+        git config --global user.name 'jguerra-astro'
+        git add -A
+        git diff --staged --exit-code || echo "::set-output name=changes::true"
 
     - name: push changes
+      if: steps.git-check.outputs.changes == 'true'
       run: |
+        git pull origin master
         git add *.bib
-        git -c user.name='juan.guerra' -c user.email='juan.guerra@yale.edu' commit -m "updating bib file"
-        git push origin main
+        git commit -m "updating bib file"
+        
+        git push origin master
