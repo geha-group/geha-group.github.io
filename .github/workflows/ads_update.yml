@@ -36,7 +36,7 @@ jobs:
         git config --global user.email 'juan.guerra@yale.edu'
         git config --global user.name 'jguerra-astro'
         git add -A
-        git diff --staged --exit-code || echo "::set-output name=changes::true"
+        git diff --staged --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
 
     - name: push changes
       if: steps.git-check.outputs.changes == 'true'
