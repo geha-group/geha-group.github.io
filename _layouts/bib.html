@@ -1,27 +1,52 @@
 ---
 ---
 <div class="text-justify">
-    {{reference}}
-</div>
-
-{% if entry.note %}
-<div>
-    <em>{{ entry.note }}</em>
-</div>
-{% endif %}
-
-<div>
-    {% if entry.doi %}
-    <span><a href="{{ entry.doi | prepend: 'http://doi.org/' }}">doi</a></span>
+    {% assign authors = entry.author | split: " and " %}
+    {% assign isGehaIncluded = false %}
+    {% assign formattedAuthors = "" %}
+    {% assign isFirstAuthor = true %}
+    
+    <!-- Formatting the author list -->
+    {% for author in authors %}
+        {% if isFirstAuthor %}
+            {% assign formattedAuthors = author | prepend: "<strong>" | append: "</strong>" %}
+            {% assign isFirstAuthor = false %}
+        {% else %}
+            {% assign formattedAuthors = formattedAuthors | append: " and " | append: author %}
+        {% endif %}
+    {% endfor %}
+    {% assign splitAuthors = formattedAuthors | split: " and " %}
+    <!-- end Formatting the Author list -->
+    
+    <!-- Handling the display of the author list -->
+    {% if splitAuthors.size >= 3 %}
+        {% assign firstThreeAuthors = splitAuthors | slice: 0, 3 %}
+        
+        <!-- Checking if 'Geha' is among the first three authors -->
+        {% for author in firstThreeAuthors %}
+            {% if author contains "Geha" %}
+                {% assign isGehaIncluded = true %}
+            {% endif %}
+        {% endfor %}
+    
+        <!-- Displaying the first three authors and checking for Geha -->
+        {{ firstThreeAuthors | join: ", " }} et al.
+        {% if isGehaIncluded == false %}
+            <strong>(includes Geha, M)</strong>
+        {% endif %}
+    {% else %}
+        {{ formattedAuthors }}
     {% endif %}
-    {% if entry.hal_id %}
-    <span><a href="{{ entry.hal_id | prepend: 'http://hal.inria.fr/' }}">hal</a></span>
-    {% endif %}
-</div>
-<div>
-    {% if entry.pdf %}
-    <span><a href="{{ entry.pdf }}">pdf</a></span>
-    {% endif %}
-</div>
+    
 
-<!-- <div><pre>{{ entry.bibtex }}</pre></div> -->
+    <em>{{ entry.title }}</em>
+    {% if entry.journal %}
+    <span>{{ entry.journal }}</span>
+    {% endif %}
+    {% if entry.booktitle %}
+    <span>{{ entry.booktitle }}</span>
+    {% endif %}
+    {% if entry.adsurl %}
+    <span><a href="{{ entry.adsurl }}">{{entry.doi}}</a></span>
+    {% endif %}
+</div>

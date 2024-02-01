@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "name"
-image: "/assets/images/image.jpeg"
+image: 'https://source.unsplash.com/random/800x600'
 # external_url: https://burke86.github.io
 text: |
     Lorem ipsum sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.
