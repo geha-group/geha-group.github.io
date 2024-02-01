@@ -9,12 +9,11 @@ layout: default
             <div class="text-div">
                 <p>
                     Welcome to the Geha Research Group at <a href="https://www.yale.edu" target="_blank">Yale University</a> in the Department of <a href="https://astronomy.yale.edu" target="_blank">Astronomy</a>. 
-                    We are focused on understanding low mass galaxies around our Milky Way, in the Local Group and in the nearby Universe.
-                    Dwarf galaxies are the dominate type of galaxy in the Universe by number.
-                    Dwarf galaxies are less luminous and more dark-matter dominated as compared to our Milky Way, providing significant constraints on galaxy formation 
-                    processes, cosmology and the nature of dark matter. 
-                    We have weekly group meetings and graduate and undergraduate students are welcome. 
-                    See opportunities and advice to get involved. 
+                    We are focused on understanding low mass galaxies around our Milky Way, in the Local Group and nearby Universe.  
+                    Low mass galaxies provide significant constraints on galaxy formation processes, cosmology and the nature of 
+                    dark matter. We study low mass galaxies ranging from gas-rich dwarf galaxies in isolation, to the least luminous 
+                    and most dark matter-dominated galaxies in orbit around the Milky Way. The Geha group has weekly research 
+                    meetings and welcomes postdocs, graduate and undergraduate students.
                 </p>
             </div>
         </div>
@@ -52,18 +51,18 @@ layout: default
     </div>
 </div>
 
-<h2 >Outreach & Teaching</h2>
+<h2>Outreach & Teaching</h2>
 
 <div class="container justify-content-center">
     <div class="row">
-        {% for card in site.outreach %}
+        {% assign outreach_cards = site.outreach | slice: 0, 3 %}
+        {% for card in outreach_cards %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex mb-3 mx-auto">
                 <div class="card flex-fill max_card">
                     {% if card.external_url %}
-                    <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
                     {% else %}
-                        <!-- <a href="{{ site.baseurl }}{{ card.url }}" class="card-link"> -->
-                        <a href="{{ 'outreach' | relative_url}}#{{card.title}}"" class="card-link">
+                        <a href="{{ 'outreach' | relative_url }}#{{ card.title }}" class="card-link">
                     {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
@@ -80,6 +79,7 @@ layout: default
         {% endfor %}
     </div>
 </div>
+
 
 <h2 >Recent work</h2>
 
