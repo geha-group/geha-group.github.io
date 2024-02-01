@@ -51,18 +51,18 @@ layout: default
     </div>
 </div>
 
-<h2 >Outreach & Teaching</h2>
+<h2>Outreach & Teaching</h2>
 
 <div class="container justify-content-center">
     <div class="row">
-        {% for card in site.outreach %}
+        {% assign outreach_cards = site.outreach | slice: 0, 3 %}
+        {% for card in outreach_cards %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex mb-3 mx-auto">
                 <div class="card flex-fill max_card">
                     {% if card.external_url %}
-                    <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ card.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
                     {% else %}
-                        <!-- <a href="{{ site.baseurl }}{{ card.url }}" class="card-link"> -->
-                        <a href="{{ 'outreach' | relative_url}}#{{card.title}}"" class="card-link">
+                        <a href="{{ 'outreach' | relative_url }}#{{ card.title }}" class="card-link">
                     {% endif %}
                     {% if card.image %}
                         <img class="card-img-top" src="{{ card.image }}" alt="{{ card.title }}">
@@ -79,6 +79,7 @@ layout: default
         {% endfor %}
     </div>
 </div>
+
 
 <h2 >Recent work</h2>
 
