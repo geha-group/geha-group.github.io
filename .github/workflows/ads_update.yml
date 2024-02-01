@@ -31,19 +31,23 @@ jobs:
         python scripts/get_ads.py  # Replace with the path to your script file
       env:
           ADS_DEV_KEY: ${{secrets.ADS_DEV_KEY}}
-    - name: Check for changes
-      id: git-check
+    - name: Set Git Configuration
       run: |
         git config --global user.email 'juan.guerra@yale.edu'
         git config --global user.name 'jguerra-astro'
+
+    - name: Pull Latest Changes
+      run: git pull origin master
+
+    - name: Check for changes
+      id: git-check
+      run: |
         git add -A
         git diff --staged --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
 
-    - name: push changes
+    - name: Commit and Push Changes
       if: steps.git-check.outputs.changes == 'true'
       run: |
-        git pull origin master
         git add scripts/most_recent_all.bib
         git commit -m "updating bib file"
-        
         git push origin master
