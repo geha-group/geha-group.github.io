@@ -4,7 +4,6 @@ import yaml
 import glob
 import numpy as np
 
-ads.config.token = 'uRUqc34SNazEXG8AhRmKTlTKt4K8Nolg0R6NzyGN'
 journal_names = {r'\\aj' : ['AJ',                   'Astronomical Journal'],
 r'\\actaa' : ['Acta Astron.',      'Acta Astronomica'],
 r'\\araa' : ['ARA\&A',             'Annual Review of Astron and Astrophys'],
