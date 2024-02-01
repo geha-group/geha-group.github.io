@@ -6,4 +6,4 @@ text: |
     The properties of isolated low-mass galaxies provide insights into the internal processes regulating star formation.   
 ---
 
-Card content written in Markdown.
+The properties of isolated low-mass galaxies provide insights into the internal processes regulating star formation.  
