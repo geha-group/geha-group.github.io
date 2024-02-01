@@ -17,9 +17,14 @@
     {% endfor %}
     {% assign splitAuthors = formattedAuthors | split: " and " %}
     <!-- end Formatting the Author list -->
-    
     <!-- Handling the display of the author list -->
-    {% if splitAuthors.size >= 3 %}
+    {% if splitAuthors.size == 3 %}
+        {% assign firstThreeAuthors = splitAuthors | slice: 0, 3 %}
+        {{ firstThreeAuthors | join: ", " }};
+    {% endif %}
+
+    <!-- Handling the display of the author list -->
+    {% if splitAuthors.size > 3 %}
         {% assign firstThreeAuthors = splitAuthors | slice: 0, 3 %}
         
         <!-- Checking if 'Geha' is among the first three authors -->
@@ -30,21 +35,22 @@
         {% endfor %}
     
         <!-- Displaying the first three authors and checking for Geha -->
-        {{ firstThreeAuthors | join: ", " }} et al.
+        {{ firstThreeAuthors | join: ", " }} et al.;
         {% if isGehaIncluded == false %}
-            <strong>(includes Geha, M)</strong>
+            (includes Geha, M)</>;
         {% endif %}
-    {% else %}
-        {{ formattedAuthors }}
+    {% endif %}
+    {% if splitAuthors.size <= 2 %}
+        {{ formattedAuthors }};
     {% endif %}
     
 
-    <em>{{ entry.title }}</em>
+    <em>{{ entry.title }}</em>;
     {% if entry.journal %}
-    <span>{{ entry.journal }}</span>
+    <span>{{ entry.journal }}</span>;
     {% endif %}
     {% if entry.booktitle %}
-    <span>{{ entry.booktitle }}</span>
+    <span>{{ entry.booktitle }}</span>;
     {% endif %}
     {% if entry.adsurl %}
     <span><a href="{{ entry.adsurl }}">{{entry.doi}}</a></span>
