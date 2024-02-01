@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Jeremy Bradford"
-former: "Garduate Student"
+former: "Graduate Student"
 current: "Director of Operations for the Warrior-Scholar Project"
 external_url: https://www.warrior-scholar.org/our-team/jeremy-bradford-2/
 text: |
