@@ -16,6 +16,8 @@ collections:
     output: true
   outreach:
     output: true
+  cupcakes:
+    output: true
 
 sass:
   sass_dir: _sass

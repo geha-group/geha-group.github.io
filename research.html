@@ -4,6 +4,11 @@ title: Research
 permalink: /research/
 ---
 
+<!-- Options for button styles -->
+<!-- <button type="button" class="btn btn-light btn-block">Cupcake Papers</button> -->
+<a href = "{{ 'cupcake_papers' | relative_url }}"><button type="button" class="btn btn-outline-dark btn-block">Cupcake Papers</button> </a>
+
+
 <div class="container">
     {% for research in site.research %}
     <h2>{{ research.title }}</h2>

@@ -1,0 +1,30 @@
+---
+title: Cupcakes
+permalink: /cupcake_papers/
+layout: page
+---
+
+<h2>Cupcake Papers</h2>
+
+<div class="container">
+    <div class="row">
+        {% for paper in site.cupcakes %}
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mx-auto">
+                <div class="card flex-fill card-border">
+                        {% if paper.external_url %}
+                            <a href="{{ paper.external_url }}" class="card-link" target="_blank" rel="noopener noreferrer">
+                        {% else %}
+                            <a href="{{ site.baseurl }}{{ paper.url }}" class="card-link">
+                        {% endif %}
+                        {% if paper.image %}
+                            <img class="card-img-top custom-card-img" src="{{ paper.image }}" alt="{{ paper.title }}">
+                        {% endif %}
+                        <div class="card-body flex-grow-1">
+                            <h5 class="card-title">{{ paper.title }}</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
