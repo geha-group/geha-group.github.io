@@ -18,5 +18,5 @@ layout: default
 - <b>Expectations:</b> A detailed description of <a href="https://tyelab.org/philosophy">expectations and the philosophy of research</a> from Kay Tye. I strongly support the ideas expressed on this page.
 - <b>Yale Postdoc Guide:</b> <a href="https://postdocs.yale.edu/postdocs/postdoctoral-affairs-handbook">Handbook</a> for incoming postdocs, good information for incoming graduates student as well. 
 - <b>Getting Started: </b> Undergraduate and graduate students starting research with the group are asked to complete the first lab on the <a href="https://astro-330.github.io/intro.html">ASTR 330 class website </a>or the two homework problems available on the <a href="http://www.astro.yale.edu/mgeha/galaxies/problemsets.html">ASTR 530 class website:</a> Isochrone fitting (HW#2, problem 3) and Using the Besancon models (HW#3 problem 7).
-- <b>The Cupcake Rule:</b> Any member of the Geha group who posts a journal article as a lead author on astro-ph is entitled to <a href=https://geha-group.github.io/cupcake_papers/>homemade cupcakes </a> at research group meeting.
+- <b>The Cupcake Rule:</b> Any member of the Geha group who posts a journal article as a lead author on astro-ph is entitled to <a href="https://geha-group.github.io/cupcake_papers/">homemade cupcakes </a> at research group meeting.
 
