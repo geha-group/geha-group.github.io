@@ -71,33 +71,64 @@ def replace_abbreviations(bib_entry):
     return bib_entry
 
 def make_bib(authors, outfile="scripts/most_recent_all.bib"):
-
+    processed_bibcodes = set()
     with open(outfile, "w+") as out:
         for author in authors:
-            # Search for papers by the author, sorted by publication date (most recent first)
-            papers = list(
-                ads.SearchQuery(
-                    q=f'author:"{author}" author: "Geha, Marla"',
-                    fl=[
-                        "citation_count",
-                        "abbr",
-                        "bibcode",
-                    ],
-                    sort="date desc",  # Sort by publication date in descending order
-                )
-            )
-            
-            # Check if there are any papers for the author
-            if papers:
-                # Get the most recent paper (first paper in the list)
-                most_recent_paper = papers[0]
+            try:
+                # Search for papers by the author, sorted by publication date (most recent first)
+                # First author papers
                 
-                # Export the BibTeX entry for the most recent paper
-                bibquery = ads.ExportQuery(most_recent_paper.bibcode)
-                bibs = bibquery.execute()
-                bibs = replace_abbreviations(bibs)
-                # Write the BibTeX entry to the output file
-                out.write(bibs)
+                papers = list(
+                    ads.SearchQuery(
+                        q=f'author:"^{author}" AND author:"Geha, Marla"',
+                        fl=[
+                            "citation_count",
+                            "abbr",
+                            "bibcode",
+                        ],
+                        sort="date desc",  # Sort by publication date in descending order
+                    )
+                )
+                
+                # nth author papers
+                papers2 = list(
+                    ads.SearchQuery(
+                        q=f'author:"{author}"AND author:"Geha, Marla"',
+                        fl=[
+                            "citation_count",
+                            "abbr",
+                            "bibcode",
+                        ],
+                        sort="date desc",  # Sort by publication date in descending order
+                    )
+                )
+                
+                # Combine and remove duplicates within the author's papers
+                all_papers = papers + papers2
+                unique_papers = {paper.bibcode: paper for paper in all_papers}.values()
+                
+                # Get the most recent papers (up to the first 3) that haven't been processed yet
+                most_recent_papers = [
+                    paper for paper in unique_papers 
+                    if paper.bibcode not in processed_bibcodes
+                ][:3]
+
+                # Collect the bibcodes of the most recent papers
+                bibcodes = [paper.bibcode for paper in most_recent_papers]
+                
+                # Mark these bibcodes as processed
+                processed_bibcodes.update(bibcodes)
+                
+                # Export the BibTeX entries for the most recent papers
+                if bibcodes:
+                    bibquery = ads.ExportQuery(bibcodes)
+                    bibs = bibquery.execute()
+                    bibs = replace_abbreviations(bibs)
+                    
+                    # Write the BibTeX entries to the output file
+                    out.write(bibs)
+            except Exception as e:
+                print(f"An error occurred for author {author}: {e}")
 
 
 def extract_names_from_file(file_path):
@@ -138,7 +169,7 @@ def main():
     collections = ['_pi','_postdocs','_grads','_undergrads']
     names = np.concatenate([get_names_from_collections(folder) for folder in collections ])
     names = [name.split(' ') for name in names]
-    names = ['^'+name[-1]+', '+name[0] for name in names]
+    names = [name[-1]+', '+name[0] for name in names]
     sorted_names = sorted(names)
     make_bib(sorted_names,outfile='scripts/most_recent_all.bib')
 
