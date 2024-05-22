@@ -3,6 +3,11 @@ import os
 import yaml
 import glob
 import numpy as np
+import re
+# get current year
+from datetime import date
+today = date.today()
+year = today.year
 
 journal_names = {r'\\aj' : ['AJ',                   'Astronomical Journal'],
 r'\\actaa' : ['Acta Astron.',      'Acta Astronomica'],
@@ -62,8 +67,6 @@ r'\\planss' : ['Planet.~Space~Sci.', 'Planetary Space Science'],
 r'\\procspie' : ['Proc.~SPIE',   'Proceedings of the SPIE'],
 r'\\scpm' : ['Sci.~China~Phys.~Mech.',     'Science China Physics, Mechanics, and Astronomy'],}
 
-
-import re
 def replace_abbreviations(bib_entry):
     for abbrev, full_name in journal_names.items():
         abbrev_formatted = r'{'+abbrev+r'}'
@@ -80,7 +83,7 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                 
                 papers = list(
                     ads.SearchQuery(
-                        q=f'author:"^{author}" AND author:"Geha, Marla"',
+                        q=f'author:"^{author}" AND author:"Geha, Marla" doctype:(article or eprint) year:({year-2}-{year})',
                         fl=[
                             "citation_count",
                             "abbr",
@@ -89,29 +92,57 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                         sort="date desc",  # Sort by publication date in descending order
                     )
                 )
-                
-                # nth author papers
-                papers2 = list(
-                    ads.SearchQuery(
-                        q=f'author:"{author}"AND author:"Geha, Marla"',
-                        fl=[
-                            "citation_count",
-                            "abbr",
-                            "bibcode",
-                        ],
-                        sort="date desc",  # Sort by publication date in descending order
+                if author!='Geha, Marla':
+                    # nth author papers
+                    papers2 = list(
+                        ads.SearchQuery(
+                            q=f'author:"{author}"AND author:"Geha, Marla"doctype:(article or eprint) year: {year-2}-{year}',
+                            fl=[
+                                "citation_count",
+                                "abbr",
+                                "bibcode",
+                            ],
+                            sort="date desc",  # Sort by publication date in descending order
+                        )
                     )
-                )
-                
-                # Combine and remove duplicates within the author's papers
-                all_papers = papers + papers2
+                    def extract_last_name(full_name):
+                        return full_name.split(',')[0].strip()
+                    author_last_name = extract_last_name(author)
+                    specific_author_last_name = "Geha"
+                    papers2 =  [
+                    paper for paper in papers2
+                    if any(extract_last_name(a) == author_last_name for a in paper.author[:9]) and 
+                    any(extract_last_name(a) == specific_author_last_name for a in paper.author[:9])
+                ]
+                    all_papers = papers + papers2
+                else:
+                    all_papers = papers
+
                 unique_papers = {paper.bibcode: paper for paper in all_papers}.values()
-                
-                # Get the most recent papers (up to the first 3) that haven't been processed yet
+                for paper in unique_papers:
+                    print('author:',author)
+                    print(paper.title)
+
+                # # Get the most recent papers (up to the first 3) that haven't been processed yet
                 most_recent_papers = [
                     paper for paper in unique_papers 
                     if paper.bibcode not in processed_bibcodes
                 ][:3]
+                # print('most recent papers:',most_recent_papers)
+
+                    # Set to keep track of processed bibcodes and titles
+                # processed_bibcodes = set()
+                # processed_titles = set()
+
+                # # Get the most recent papers (up to the first 3) that haven't been processed yet
+                # most_recent_papers = []
+                # for paper in unique_papers:
+                #     if paper.bibcode not in processed_bibcodes and paper.title not in processed_titles:
+                #         most_recent_papers.append(paper)
+                #         processed_bibcodes.add(paper.bibcode)
+                #         processed_titles.add(paper.title)
+                #         if len(most_recent_papers) == 3:
+                #             break
 
                 # Collect the bibcodes of the most recent papers
                 bibcodes = [paper.bibcode for paper in most_recent_papers]
