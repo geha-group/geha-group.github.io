@@ -128,23 +128,7 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                     paper for paper in unique_papers 
                     if paper.bibcode not in processed_bibcodes
                 ][:3]
-                # print('most recent papers:',most_recent_papers)
 
-                    # Set to keep track of processed bibcodes and titles
-                # processed_bibcodes = set()
-                # processed_titles = set()
-
-                # # Get the most recent papers (up to the first 3) that haven't been processed yet
-                # most_recent_papers = []
-                # for paper in unique_papers:
-                #     if paper.bibcode not in processed_bibcodes and paper.title not in processed_titles:
-                #         most_recent_papers.append(paper)
-                #         processed_bibcodes.add(paper.bibcode)
-                #         processed_titles.add(paper.title)
-                #         if len(most_recent_papers) == 3:
-                #             break
-
-                # Collect the bibcodes of the most recent papers
                 bibcodes = [paper.bibcode for paper in most_recent_papers]
                 
                 # Mark these bibcodes as processed
