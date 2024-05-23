@@ -174,9 +174,6 @@ def get_names_from_collections(collection_path):
             names.append(name)
     return names
 
-
-
-
 # Function to extract the last name from "Last name, First name" or "{Last name}, First name" format
 def extract_last_name(full_name):
     return full_name.split(',')[0].strip('{}').strip()
@@ -236,16 +233,13 @@ def modify_bibtex_author_names(bibs_content, target_full_name):
     
     return modified_bibs_content
 
-
-
-
 def main():
     collections = ['_pi','_postdocs','_grads','_undergrads']
     names = np.concatenate([get_names_from_collections(folder) for folder in collections ])
     names = [name.split(' ') for name in names]
     names = [name[-1]+', '+name[0] for name in names]
-    # sorted_names = sorted(names)
-    # make_bib(sorted_names,outfile='scripts/most_recent_all.bib')
+    sorted_names = sorted(names)
+    make_bib(sorted_names,outfile='scripts/most_recent_all.bib')
 
     with open('scripts/most_recent_all.bib','r') as file:
         bibs_content = file.read()
