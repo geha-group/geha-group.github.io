@@ -9,7 +9,7 @@
     <!-- Formatting the author list -->
     {% for author in authors %}
         {% if isFirstAuthor %}
-            {% assign formattedAuthors = author | prepend: "<strong>" | append: "</strong>" %}
+            {% assign formattedAuthors = author | prepend: "" | append: "" %}
             {% assign isFirstAuthor = false %}
         {% else %}
             {% assign formattedAuthors = formattedAuthors | append: " and " | append: author %}
@@ -37,7 +37,7 @@
         <!-- Displaying the first three authors and checking for Geha -->
         {{ firstThreeAuthors | join: ", " }} et al.;
         {% if isGehaIncluded == false %}
-            (includes Geha, M)</>;
+            <strong>(includes Geha, M)</strong>;
         {% endif %}
     {% endif %}
     {% if splitAuthors.size <= 2 %}

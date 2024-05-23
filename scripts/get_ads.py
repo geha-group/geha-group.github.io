@@ -67,6 +67,7 @@ r'\\planss' : ['Planet.~Space~Sci.', 'Planetary Space Science'],
 r'\\procspie' : ['Proc.~SPIE',   'Proceedings of the SPIE'],
 r'\\scpm' : ['Sci.~China~Phys.~Mech.',     'Science China Physics, Mechanics, and Astronomy'],}
 
+
 def replace_abbreviations(bib_entry):
     for abbrev, full_name in journal_names.items():
         abbrev_formatted = r'{'+abbrev+r'}'
@@ -105,8 +106,6 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                             sort="date desc",  # Sort by publication date in descending order
                         )
                     )
-                    def extract_last_name(full_name):
-                        return full_name.split(',')[0].strip()
                     author_last_name = extract_last_name(author)
                     specific_author_last_name = "Geha"
                     papers2 =  [
@@ -119,9 +118,6 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                     all_papers = papers
 
                 unique_papers = {paper.bibcode: paper for paper in all_papers}.values()
-                for paper in unique_papers:
-                    print('author:',author)
-                    print(paper.title)
 
                 # # Get the most recent papers (up to the first 3) that haven't been processed yet
                 most_recent_papers = [
@@ -139,8 +135,6 @@ def make_bib(authors, outfile="scripts/most_recent_all.bib"):
                     bibquery = ads.ExportQuery(bibcodes)
                     bibs = bibquery.execute()
                     bibs = replace_abbreviations(bibs)
-                    
-                    # Write the BibTeX entries to the output file
                     out.write(bibs)
             except Exception as e:
                 print(f"An error occurred for author {author}: {e}")
@@ -180,14 +174,87 @@ def get_names_from_collections(collection_path):
             names.append(name)
     return names
 
+
+
+
+# Function to extract the last name from "Last name, First name" or "{Last name}, First name" format
+def extract_last_name(full_name):
+    return full_name.split(',')[0].strip('{}').strip()
+
+# Function to highlight the author name with <strong> tags
+def highlight_author_name(authors, target_last_name):
+    highlighted_authors = []
+    for author in authors:
+        last_name = extract_last_name(author)
+        if last_name == target_last_name:
+            highlighted_authors.append(f"<strong>{author.strip()}</strong>")
+        else:
+            highlighted_authors.append(author)
+    return highlighted_authors
+
+# Function to modify the author names in a single BibTeX entry
+def modify_single_bibtex_entry(entry, target_full_name):
+    # Extract the last name of the target author
+    target_last_name = extract_last_name(target_full_name)
+    
+    # Corrected regex pattern to capture the entire author field string
+    pattern = re.compile(r'author\s*=\s*\{(.*?)\},\n', re.IGNORECASE | re.DOTALL)
+    matches = pattern.findall(entry)
+    
+    # Process the matches if found
+    if matches:
+        author_field = matches[0]
+
+        # Split the authors correctly considering nested braces
+        authors = re.split(r'\s+and\s+', author_field)
+
+        # Highlight the target author
+        highlighted_authors = highlight_author_name(authors, target_last_name)
+
+        highlighted_authors_str = " and ".join(highlighted_authors)
+        # Replace the entire author field with the new, properly formatted authors
+        new_author_field = f"author = {{{highlighted_authors_str}}},\n"
+        entry = entry.replace(f"author = {{{matches[0]}}},\n", new_author_field, 1)
+
+    return entry
+
+# Function to modify the author names in all BibTeX entries
+def modify_bibtex_author_names(bibs_content, target_full_name):
+    # Split the content into individual entries
+    entries = re.split(r'\n@', bibs_content)
+    
+    # Process each entry
+    modified_entries = []
+    for i in range(len(entries)):
+        if i > 0:
+            entries[i] = '@' + entries[i]  # Add back the '@' symbol removed by split
+        modified_entry = modify_single_bibtex_entry(entries[i], target_full_name)
+        modified_entries.append(modified_entry)
+    
+    # Join the modified entries back into a single string
+    modified_bibs_content = '\n'.join(modified_entries)
+    
+    return modified_bibs_content
+
+
+
+
 def main():
     collections = ['_pi','_postdocs','_grads','_undergrads']
     names = np.concatenate([get_names_from_collections(folder) for folder in collections ])
     names = [name.split(' ') for name in names]
     names = [name[-1]+', '+name[0] for name in names]
-    sorted_names = sorted(names)
-    make_bib(sorted_names,outfile='scripts/most_recent_all.bib')
+    # sorted_names = sorted(names)
+    # make_bib(sorted_names,outfile='scripts/most_recent_all.bib')
 
+    with open('scripts/most_recent_all.bib','r') as file:
+        bibs_content = file.read()
+    
+    for name in names:
+        bibs_content = modify_bibtex_author_names(bibs_content, name)
+
+    with open('scripts/most_recent_all.bib','w') as file:
+        file.write(bibs_content)
 
 if __name__ == "__main__":
     main()
