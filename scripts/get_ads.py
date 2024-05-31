@@ -280,7 +280,7 @@ def add_custom_field_for_additional_authors(entry, author_list):
         additional_authors = []
         for index, author in enumerate(authors):
             last_name = extract_last_name(author)
-            if last_name in [extract_last_name(a) for a in author_list] and index >= 6:
+            if last_name in [extract_last_name(a) for a in author_list] and index >= 5:
                 additional_authors.append(author)
         if additional_authors:
             entry["additional_authors"] = (
