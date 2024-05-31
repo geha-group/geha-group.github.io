@@ -24,7 +24,7 @@ jobs:
     - name: Install the 'ads' library
       run: |
         pip install --upgrade pip
-        pip install ads PyYAML numpy
+        pip install ads PyYAML numpy bibtexparser
 
     - name: Run the script
       run: |

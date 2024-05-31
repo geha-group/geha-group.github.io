@@ -18,29 +18,23 @@
     {% assign splitAuthors = formattedAuthors | split: " and " %}
     <!-- end Formatting the Author list -->
     <!-- Handling the display of the author list -->
-    {% if splitAuthors.size == 3 %}
-        {% assign firstThreeAuthors = splitAuthors | slice: 0, 3 %}
+    {% if splitAuthors.size == 5 %}
+        {% assign firstThreeAuthors = splitAuthors | slice: 0, 5 %}
         {{ firstThreeAuthors | join: ", " }};
     {% endif %}
 
     <!-- Handling the display of the author list -->
-    {% if splitAuthors.size > 3 %}
-        {% assign firstThreeAuthors = splitAuthors | slice: 0, 3 %}
+    {% if splitAuthors.size > 5 %}
+        {% assign firstThreeAuthors = splitAuthors | slice: 0, 5 %}
         
-        <!-- Checking if 'Geha' is among the first three authors -->
-        {% for author in firstThreeAuthors %}
-            {% if author contains "Geha" %}
-                {% assign isGehaIncluded = true %}
-            {% endif %}
-        {% endfor %}
     
         <!-- Displaying the first three authors and checking for Geha -->
         {{ firstThreeAuthors | join: ", " }} et al.;
-        {% if isGehaIncluded == false %}
-            <strong>(includes Geha, M)</strong>;
+        {% if entry.additional_authors %}
+            <strong>({{ entry.additional_authors }})</strong>;
         {% endif %}
     {% endif %}
-    {% if splitAuthors.size <= 2 %}
+    {% if splitAuthors.size <= 4 %}
         {{ formattedAuthors }};
     {% endif %}
     
