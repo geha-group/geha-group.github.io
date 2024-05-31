@@ -93,8 +93,6 @@ journal_names = {
     ],
 }
 
-ads.config.token = "oVYKLEQT7qQ5N3JC5kNEe8NqEF5breEVK4xF2i0C"
-
 
 def replace_abbreviations(bib_entry):
     for abbrev, full_name in journal_names.items():
