@@ -32,3 +32,5 @@ scholar:
   bibliography_template: bib
   source: scripts
   bibliography: most_recent_all.bib
+
+webserver: puma
