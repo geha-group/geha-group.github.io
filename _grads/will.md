@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Will Cerny"
+title: "William Cerny"
 image: "/assets/images/will.jpg"
 external_url: https://astronomy.yale.edu/people/william-cerny
 text: |
