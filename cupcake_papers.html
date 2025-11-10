@@ -8,7 +8,8 @@ layout: page
 
 <div class="container">
     <div class="row">
-        {% for paper in site.cupcakes %}
+        {% assign cupcakes_sorted = site.cupcakes | sort: 'slug' | reverse %}
+        {% for paper in cupcakes_sorted %}
             <div class="col-sm-12 col-md-6 col-lg-4 d-flex mx-auto">
                 <div class="card flex-fill card-border">
                         {% if paper.external_url %}
