@@ -18,6 +18,8 @@ collections:
     output: true
   cupcakes:
     output: true
+  deimos:
+    output: true
 
 sass:
   sass_dir: _sass
