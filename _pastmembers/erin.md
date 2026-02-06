@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Erin Kado-Fong"
+former: "Postdoc"
+current: "Postdoctoral Fellow at Stanford"
 image: "/assets/images/erin.jpeg"
 external_url: https://ekadofong.github.io/
 text: |
