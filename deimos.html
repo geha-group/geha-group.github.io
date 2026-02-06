@@ -1,0 +1,44 @@
+---
+title: DEIMOS 
+permalink: /deimos/
+layout: page
+---
+
+<h2>The Keck/DEIMOS Stellar Archive</h2>
+
+<!-- DISPLAY AS SECTIONS (a la research page)-->
+
+<div class="container">
+    {% assign desired = "paper1,paper2" | split: "," %}
+
+    {% for slug in desired %}
+        {% assign paper = site.deimos | where: "slug", slug | first %}
+        <h3>{{ paper.title }}</h3>
+            <div class="row" id="{{paper.title}}">
+                <div class="col-md-6">
+                    <div class="text-div">
+                        <p>{{ paper.content }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ paper.image | relative_url }}" alt="{{ paper.title }}" class="img-fluid">
+                </div>
+            </div>
+    {% endfor %}
+</div>
+
+<div class="container">
+    {% assign desired = "other_papers" | split: "," %}
+
+    {% for slug in desired %}
+        {% assign paper = site.deimos | where: "slug", slug | first %}
+        <h2>{{ paper.title }}</h2>
+            <div class="row" id="{{paper.title}}">
+                <div class="col-md-12">
+                    <div class="text-div">
+                        <p>{{ paper.content }}</p>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+</div>
