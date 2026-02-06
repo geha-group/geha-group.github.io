@@ -57,7 +57,7 @@ This site follows a pretty standard jekyll structure. In general, you can modify
 * **Layouts** → `_layouts/`
 * **Includes (nav, footer, etc.)** → `_includes/`
 * **Site settings** → `_config.yml`
-* **Styling** → `assets/css/` or theme files.
+* **Styling** → `assets/css/` or `_sass/` files.
 
 When creating new pages, make sure all pages include some front matter, e.g.:
 
@@ -68,7 +68,7 @@ title: Page Title
 ---
 ```
 
-#### How to add yourself (or a new person) to the Members page
+### How to add yourself (or a new person) to the Members page
 
 Member “cards” are generated automatically from **collection files** (one file per person). To add a new member, you just (1) add a card file in the right folder and (2) add a photo in the images folder.
 
