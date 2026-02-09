@@ -12,7 +12,7 @@ Imaging Multiobject Spectrograph (DEIMOS) spectrograph using the 1200G grating.
 Catalogs include individual stellar radial velocities, equivalent width-based [Fe/H] metallicities, 
 and membership estimates. 
 
-You can access the database below.   See Paper I Appendix for detailed description of each column: 
+You can access the tables directly from ApJ or in alternative formats below.   See Paper I Appendix for detailed description of each column: 
 - <b>Table 1A </b>[<a href="{{ '/assets/deimos/table1A_20260110.csv' | relative_url }}"> csv </a> | <a href="https://www.dropbox.com/scl/fi/g8cr8uzhtpnyvkjgq2ld1/table1A_20260110.fits?rlkey=cze6gxvmovg9ks7tnjapuzkdq&st=ioarynwi&dl=0"> fits</a>] lists the Milky Way system names (e.g., Draco, NGC 4590), literature properties, and select measured system quantities (78 rows).
 - <b>Table 2A </b>[<a href="{{ '/assets/deimos/table2A_20260110.csv' | relative_url }}" download>csv</a> | <a href="https://www.dropbox.com/scl/fi/un5f89lv0pbvivlvlosq5/table2A_20260110.fits?rlkey=20u9zp19ctthnk1kv4d2q0x7b&st=37e3hxcy&dl=0">fits</a>] lists observational details for each DEIMOS mask included in this work (411 rows). There are five additional rows in this table for overlapping masks in the Sgr and NGC6715 systems.
 - <b> Table 3A </b>[<a href="{{ '/assets/deimos/table3A_20260110.csv' | relative_url }}" download>csv</a> | <a href="https://www.dropbox.com/scl/fi/pw3nyxoc5gc45a19ggyae/table3A_20260110.fits?rlkey=32ny2md5mwp09w9kqeyk31zo7&st=859mdgwx&dl=0">fits</a>] is <b>the primary data table</b>, one row per unique star observed with DEIMOS. Measurements include velocity, CaT-based metallicity and membership estimates (22,339 rows).
