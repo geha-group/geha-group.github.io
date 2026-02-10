@@ -6,7 +6,7 @@ image: "/assets/deimos/deimos_paper1.webp"
 #external_url: 
 ---
 
-We present a homogeneous spectroscopic dataset of 22,339 stars in 78 Milky Way dwarf galaxy satellites and globular clusters. 
+Paper I (Geha et al. 2026) presents a homogeneous spectroscopic dataset of 22,339 stars in 78 Milky Way dwarf galaxy satellites and globular clusters. 
 All data were taken with the Keck II telescope and Deep Extragalactic
 Imaging Multiobject Spectrograph (DEIMOS) spectrograph using the 1200G grating. 
 Catalogs include individual stellar radial velocities, equivalent width-based [Fe/H] metallicities, 
