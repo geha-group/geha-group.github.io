@@ -13,4 +13,4 @@ velocity dispersions, enclosed dynamical masses, mean [Fe/H] metalliticies, and 
 metallicity spreads for systems with 10 or more member stars. 
 
 Access to integrated properties for Milky Way systems is available:
-- <b>Table 1 </b>[<a href="https://www.dropbox.com/scl/fi/3pegmmj7hd4yjpebbyygh/table1A_20260110.csv?rlkey=bkikg68z7en87bze02ma7pa8w&dl=0"> csv </a> \| <a href="https://www.dropbox.com/scl/fi/7qh0wd33u285vpzefkgrh/T1_data.ipynb?rlkey=gkz283s168v1825opwu9koixw&dl=0"> fits</a>]   
+- <b>Table 1 </b>[<a href="https://www.dropbox.com/scl/fi/3pegmmj7hd4yjpebbyygh/table1A_20260110.csv?rlkey=bkikg68z7en87bze02ma7pa8w&dl=0">csv </a> \| <a href="https://www.dropbox.com/scl/fi/7qh0wd33u285vpzefkgrh/T1_data.ipynb?rlkey=gkz283s168v1825opwu9koixw&dl=0"> fits</a>] provides velocity dispersions and metallicities for Milky Way satellite galaxies and globular clusters observed with Keck/DEIMOS.  
