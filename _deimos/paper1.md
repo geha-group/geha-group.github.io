@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Uniform Velocities and Metallicities for 78 Milky Way Dwarf Galaxies and Globular Clusters"
+title: "Paper I:  Uniform Velocities and Metallicities for 78 Milky Way Dwarf Galaxies and Globular Clusters"
 author: "Geha et al., 2026a"
 image: "/assets/deimos/deimos_paper1.webp"
 #external_url: 
