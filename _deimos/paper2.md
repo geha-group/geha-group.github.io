@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dynamical Masses and Metallicities for a Uniform Sample of Milky Way Satellites"
+title: "Paper II:  Dynamical Masses and Metallicities for a Uniform Sample of Milky Way Satellites"
 author: "Geha et al., 2026b"
 image: "/assets/deimos/F02_wolf_ML.webp"
 #external_url: 
