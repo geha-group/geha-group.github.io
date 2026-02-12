@@ -6,7 +6,7 @@ image: "/assets/deimos/F02_wolf_ML.webp"
 #external_url: 
 ---
 
-Paper II (Geha 2026) presents the largest self-consistent sample of spectroscopically-derived quantities for 
+<a href="https://arxiv.org/abs/2602.10202">Paper II</a> (Geha 2026) presents the largest self-consistent sample of spectroscopically-derived quantities for 
 Milky Way satellite galaxies and globular clusters based on a homogeneous re-analysis of 
 individual stars observed with the Keck/DEIMOS spectrograph.   We determine uniform internal 
 velocity dispersions, enclosed dynamical masses, mean [Fe/H] metalliticies, and internal 
