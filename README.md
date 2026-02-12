@@ -14,10 +14,10 @@ On GitHub:
 - Click Fork (top right).
 - This creates your own copy under your GitHub account.
 
-Now, you need to clone your fork to have a local copy you can edit: 
+Now, you need to clone your fork to have a local copy you can edit (make sure to replace `yourfork` below with your username!): 
 
 ```bash
-git clone git@github.com:geha-group/geha-group.github.io.git
+git clone git@github.com:geha-group/yourfork/geha-group.github.io.git
 cd geha-group.github.io
 ```
 
