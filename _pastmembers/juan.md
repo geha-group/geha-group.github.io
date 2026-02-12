@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Juan Guerra"
+former: "Graduate Student"
 image: "/assets/images/juan.jpg"
-ads_search:
 external_url: https://astronomy.yale.edu/people/juan-guerra
 text: |
     Juan works on Galactic dynamics. 
