@@ -5,13 +5,28 @@ Go to our group site at:
 
 ## Editing This Site
 
-This site is built with **Jekyll** and deployed via **GitHub Pages**. You can preview changes locally before pushing.
+This site is built with **Jekyll** and deployed via **GitHub Pages**. You should preview changes locally before pushing (see Sec. 2 and 3). Most contributors will not have direct push access to this repository. Please use the fork + pull request workflow.
 
-### 1. Clone the Repository
+### 1. Fork the Repository
+
+On GitHub:
+- Go to: https://github.com/geha-group/geha-group.github.io
+- Click Fork (top right).
+- This creates your own copy under your GitHub account.
+
+Now, you need to clone your fork to have a local copy you can edit: 
 
 ```bash
 git clone git@github.com:geha-group/geha-group.github.io.git
 cd geha-group.github.io
+```
+
+If you anticipate making multiple rounds of changes over time (and multiple pull reqeusts to merge edits back into the main website), you shuold make a new branch in your fork. If you are making only a few minimal edits, you can just edit in the main branch of your fork and merge back into the main branch of the website. 
+
+Before making changes, you can create a branch like this 
+
+```bash
+git checkout -b your-new-branch-name
 ```
 
 ---
@@ -35,7 +50,7 @@ This installs all required gems from the `Gemfile`.
 To preview the site locally:
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --watch
 ```
 
 Then open:
@@ -44,7 +59,7 @@ Then open:
 http://localhost:4000
 ```
 
-The site will auto-rebuild when you save changes.
+The site will auto-rebuild when you save changes, so you can start editing and see how your changes look. 
 
 If it doesn’t update, stop (`Ctrl+C`) and restart the server.
 
@@ -116,14 +131,21 @@ Recommended: use an image that matches the aspect ratio of everyone else's cards
 
 ---
 
-### 5. Commit & Push
+### 5. Commit & Push to Your Fork 
 
 Once satisfied with changes:
 
 ```bash
 git add .
 git commit -m "Describe your changes"
-git push
+git push origin your-new-branch-name
 ```
 
-GitHub Pages will automatically rebuild and deploy.
+### 6. Open a Pull Request
+
+- Go to your fork on GitHub.
+- Click Compare & pull request.
+- Make sure the base repository is: geha-group/geha-group.github.io 
+- Submit the pull request
+
+Once approved, your changes will be merged and automatically deployed.
