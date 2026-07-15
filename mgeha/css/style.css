@@ -1,0 +1,99 @@
+/* Continuum — shared styles for geha-group.github.io/mgeha */
+
+:root{
+  --bg:#ffffff; --panel:#f4f5f9; --ink:#1c1e26; --soft:#5b5f6e;
+  --accent:#3d4bd6; --accent-soft:#e3e5fb; --rule:#dcdee6;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#12141c; --panel:#191c26; --ink:#eef0f6; --soft:#a7abbd; --accent:#8b96ff; --accent-soft:#262a44; --rule:#2c2f3d; }
+}
+:root[data-theme="dark"]{ --bg:#12141c; --panel:#191c26; --ink:#eef0f6; --soft:#a7abbd; --accent:#8b96ff; --accent-soft:#262a44; --rule:#2c2f3d; }
+:root[data-theme="light"]{ --bg:#ffffff; --panel:#f4f5f9; --ink:#1c1e26; --soft:#5b5f6e; --accent:#3d4bd6; --accent-soft:#e3e5fb; --rule:#dcdee6; }
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.5;
+}
+a{ color:inherit; text-decoration:none; }
+.tabular{ font-variant-numeric:tabular-nums; }
+.serif{ font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif; }
+
+/* ---- hero ---- */
+.hero{
+  position:relative; height:230px; display:flex; align-items:center; justify-content:center;
+  text-align:center; color:#fff;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 30%, rgba(255,255,255,.9) 50%, transparent 55%),
+    radial-gradient(1.5px 1.5px at 26% 62%, rgba(255,255,255,.7) 50%, transparent 55%),
+    radial-gradient(1px 1px at 44% 22%, rgba(255,255,255,.8) 50%, transparent 55%),
+    radial-gradient(1.5px 1.5px at 68% 70%, rgba(255,255,255,.6) 50%, transparent 55%),
+    radial-gradient(1px 1px at 82% 35%, rgba(255,255,255,.9) 50%, transparent 55%),
+    radial-gradient(1.5px 1.5px at 91% 58%, rgba(255,255,255,.7) 50%, transparent 55%),
+    linear-gradient(120deg,#2a2f5f 0%, #384490 45%, #5b3f8f 100%);
+}
+.hero.small{ height:170px; }
+.hero.photo{ background-size:cover; background-position:center 45%; }
+.hero.photo h1, .hero.photo .role{ text-shadow:0 1px 8px rgba(0,0,0,.45); }
+.hero h1{ font-size:2.3rem; font-weight:400; margin:0 0 6px; letter-spacing:.01em; text-wrap:balance; }
+.hero .role{ font-size:.92rem; letter-spacing:.03em; opacity:.9; }
+
+/* ---- nav ---- */
+.navbar{ display:flex; align-items:center; gap:22px; padding:22px 24px; max-width:840px; margin:0 auto; }
+.navbar .rule{ flex:1; height:1px; background:var(--rule); }
+.navbar ul{ display:flex; gap:24px; list-style:none; padding:0; margin:0; white-space:nowrap; }
+.navbar a{ font-size:.88rem; font-weight:600; color:var(--soft); }
+.navbar a:hover{ color:var(--ink); }
+.navbar a.active{ color:var(--accent); }
+
+/* ---- main content ---- */
+.content{ max-width:820px; margin:0 auto; padding:36px 24px 20px; }
+
+.bio-row{ display:flex; gap:32px; align-items:flex-start; margin-bottom:44px; }
+.headshot{ flex:0 0 141px; width:141px; height:auto; aspect-ratio:476/596; border-radius:12px; object-fit:cover; }
+.bio-row .text p{ margin:0 0 16px; line-height:1.7; text-align:justify; color:var(--ink); font-size:.98rem; }
+.bio-row .text p:last-child{ margin-bottom:0; }
+.bio-row a{ color:var(--accent); font-weight:600; }
+
+section{ margin-bottom:44px; scroll-margin-top:20px; }
+section h2{ font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif; font-weight:400; font-size:1.5rem; margin:0 0 14px; color:var(--ink); }
+section p{ color:var(--soft); font-size:.94rem; line-height:1.7; margin:0 0 12px; }
+section p a{ color:var(--accent); font-weight:600; }
+section p:last-child{ margin-bottom:0; }
+
+h3.sub{ font-size:.9rem; font-weight:700; margin:26px 0 12px; color:var(--ink); }
+ul.plain{ list-style:disc; margin:0; padding-left:20px; }
+ul.plain li{ font-size:.9rem; line-height:1.65; padding:6px 0; color:var(--soft); }
+ul.plain a{ color:var(--accent); font-weight:600; }
+
+.course{ padding:14px 0; border-bottom:1px solid var(--rule); }
+.course:last-child{ border-bottom:none; }
+.course .code{ font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:4px; font-weight:700; }
+.course .title{ font-weight:700; font-size:.98rem; color:var(--ink); }
+.course .title a{ color:var(--accent); }
+.course p{ font-size:.87rem; line-height:1.6; color:var(--soft); margin:6px 0 0; }
+
+/* ---- CV grid ---- */
+.cv-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; background:var(--panel); border-radius:12px; padding:30px 34px; align-items:start; }
+.cv-grid h4{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin:0 0 12px; }
+.cv-grid ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; }
+.cv-grid li{ font-size:.83rem; color:var(--ink); line-height:1.5; }
+.cv-grid .yr{ color:var(--soft); margin-right:6px; }
+.cv-grid a{ color:var(--accent); }
+@media (max-width:640px){ .cv-grid{ grid-template-columns:1fr; } }
+
+.cv-back{ font-size:.85rem; color:var(--soft); margin-bottom:6px; display:inline-block; }
+.cv-back:hover{ color:var(--accent); }
+
+/* ---- footer ---- */
+footer{ max-width:840px; margin:0 auto; padding:26px 24px 60px; border-top:1px solid var(--rule); display:flex; gap:24px; align-items:center; justify-content:center; color:var(--soft); }
+footer .icon-only{ display:inline-flex; }
+footer .icon-only:hover{ color:var(--accent); }
+
+@media (max-width:560px){
+  .bio-row{ flex-direction:column; align-items:center; text-align:center; }
+  .navbar ul{ gap:14px; }
+  .hero h1{ font-size:1.9rem; }
+}
