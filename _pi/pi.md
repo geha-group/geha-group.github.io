@@ -2,7 +2,7 @@
 layout: page
 title: "Marla Geha"
 image: "/assets/images/marla.jpg"
-external_url: http://www.astro.yale.edu/mgeha/
+external_url: https://geha-group.github.io/mgeha/
 text: |
     Lorem ipsum sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.
 ---
