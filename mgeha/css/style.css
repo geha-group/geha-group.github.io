@@ -79,7 +79,7 @@ ul.plain a{ color:var(--accent); font-weight:600; }
 
 /* ---- CV grid ---- */
 .cv-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; background:var(--panel); border-radius:12px; padding:30px 34px; align-items:start; }
-.cv-grid h4{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin:0 0 12px; }
+.cv-grid h4{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink); margin:0 0 12px; }
 .cv-grid ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; }
 .cv-grid li{ font-size:.83rem; color:var(--ink); line-height:1.5; }
 .cv-grid .yr{ color:var(--soft); margin-right:6px; }
