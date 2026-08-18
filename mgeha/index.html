@@ -51,11 +51,19 @@
 
     <section id="teaching">
       <h2 class="serif">Teaching</h2>
-      <p>I teach courses on topics including scientific computing, galactic dynamics, orbital mechanics and astrophysics research methods, including my <a href="https://www.youtube.com/playlist?list=PLh9mgdi4rNexC1fSWLlpQx_Gjj_0DhjVE" target="_blank" rel="noopener">Rocket Science for Everyone</a> series.</p>
+      <p>I teach courses on topics including scientific computing, galactic dynamics, orbital mechanics and astrophysics research methods.</p>
       <ul class="plain">
         <li><b>ASTR 3300</b> — <a href="https://astro-330.github.io/intro.html" target="_blank" rel="noopener">Scientific Computing in Astrophysics</a></li>
         <li><b>ASTR 5180</b> — <a href="https://press.princeton.edu/books/paperback/9780691130279/galactic-dynamics" target="_blank" rel="noopener">Galactic Dynamics</a></li>
         <li><b>ASTR 4000</b> — <a href="https://www.educate.elsevier.com/book/details/9780080977478" target="_blank" rel="noopener">Orbital Mechanics and Mission Design</a></li>
+      </ul>
+    </section>
+
+    <section id="beyond">
+      <h2 class="serif">Beyond</h2>
+      <ul class="plain">
+        <li><a href="https://www.youtube.com/playlist?list=PLh9mgdi4rNexC1fSWLlpQx_Gjj_0DhjVE" target="_blank" rel="noopener">Rocket Science for Everyone</a></li>
+        <li><a href="https://www.revuprogram.com/" target="_blank" rel="noopener">Research Experience for Veteran Undergrads (REVU)</a></li>
       </ul>
     </section>
 
@@ -100,7 +108,7 @@
   </footer>
 
 <script>
-  const sections = ['home','research','teaching','cv'].map(id => document.getElementById(id));
+  const sections = ['home','research','teaching','beyond','cv'].map(id => document.getElementById(id));
   const links = document.querySelectorAll('#side-nav a[data-nav]');
   const setActive = id => links.forEach(a => a.classList.toggle('active', a.dataset.nav === id));
   const io = new IntersectionObserver(entries => {
