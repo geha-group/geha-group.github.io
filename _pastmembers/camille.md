@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: page
 title: "Camille Chiu"
+former: "Undergraduate Student"
+current: "Postbac Researcher at MPIA, Heidelberg"
 image: "/assets/images/camille.jpeg"
 # external_url: https://burke86.github.io
 text: |
