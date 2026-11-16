@@ -49,7 +49,17 @@ a{ color:inherit; text-decoration:none; }
 .navbar a.active{ color:var(--accent); }
 
 /* ---- main content ---- */
-.content{ max-width:820px; margin:0 auto; padding:36px 24px 20px; }
+.content{ max-width:820px; margin:0 auto; padding:36px 24px 20px; position:relative; }
+
+/* ---- pronunciation card: beside the content on wide windows, below it on narrow ones ---- */
+.pron-card{ background:var(--panel); border-radius:12px; padding:18px 22px; }
+.pron-label{ font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink); margin:0 0 8px; }
+.pron-say{ font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif; font-size:1.5rem; color:var(--ink); margin:0 0 4px; line-height:1.2; }
+.pron-say b{ font-weight:400; color:var(--accent); }
+.pron-note{ font-size:.86rem; color:var(--soft); margin:0; line-height:1.5; }
+@media (min-width:1240px){
+  .pron-side{ position:absolute; top:36px; left:calc(100% + 8px); width:190px; }
+}
 
 .bio-row{ display:flex; gap:32px; align-items:flex-start; margin-bottom:44px; }
 .headshot{ flex:0 0 141px; width:141px; height:auto; aspect-ratio:476/596; border-radius:12px; object-fit:cover; }
