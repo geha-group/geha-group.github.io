@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: page
 title: "Colin Burke"
+former: "Postdoc"
+current: "Faculty at the University of North Texas"
 image: "/assets/images/colin.jpeg"
 external_url: https://burke86.github.io
 text: |

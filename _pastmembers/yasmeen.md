@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Yasmeen Asali"
+former: "Graduate Student"
+current: "UVEX Postdoc at UC Berkeley"
 image: "/assets/images/yasmeen.jpeg"
 external_url: https://www.yasmeenasali.com
 text: |
